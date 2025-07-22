@@ -1,0 +1,22 @@
+{
+  "name": "foodi",
+  "version": "1.0.0",
+  "description": "Food Delivery app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chandraveer7389/Foodi.git"
+  },
+  "author": "Chandraveer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chandraveer7389/Foodi/issues"
+  },
+  "homepage": "https://github.com/Chandraveer7389/Foodi#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
