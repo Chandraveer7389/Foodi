@@ -2,8 +2,8 @@
   "name": "foodi",
   "version": "1.0.0",
   "description": "Food Delivery app",
-  "main": "index.js",
   "scripts": {
+    "start":"parcel index.html",
     "test": "jest"
   },
   "repository": {
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Chandraveer7389/Foodi#readme",
   "devDependencies": {
     "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
