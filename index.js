@@ -4,7 +4,7 @@ const Header = () => {
     return (<div className="header">
         <div className="logo-container">
             <img
-            className="logo" src="./logo-img/food-logo.jpg"
+            className="logo" src="/food-logo.jpg"
             style={{ width: "200px", height: "auto", border: "2px solid red" }}/>
         </div>
         <div className="nav-items">

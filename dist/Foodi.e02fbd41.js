@@ -688,7 +688,7 @@ const Header = ()=>{
                 className: "logo-container",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     className: "logo",
-                    src: "./logo-img/food-logo.jpg",
+                    src: "/food-logo.jpg",
                     style: {
                         width: "200px",
                         height: "auto",
