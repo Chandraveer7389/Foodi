@@ -1,132 +1,167 @@
-/*
-    General body styling:
-    Sets a clean font, removes default margins, and applies a light background color.
-*/
+/* Import a modern, clean font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Define a color palette using CSS variables for easy management */
+:root {
+  --primary-color: #FF6701; /* A vibrant, warm orange for accents */
+  --background-color: #FFFBF5; /* A very soft, warm off-white */
+  --text-color: #333333; /* Dark charcoal for better readability */
+  --text-light: #555555; /* Lighter gray for secondary text */
+  --card-background: #FFFFFF; /* Clean white for cards */
+  --shadow-color: rgba(0, 0, 0, 0.08); /* A softer shadow color */
+}
+
+/* --- General Body Styling --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4; /* A very light gray for a soft background */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-/*
-    Header styling:
-    Uses flexbox to align the logo and navigation items on opposite ends.
-    Adds a white background and a subtle shadow for a "floating" effect.
-*/
+/* --- Header & Navigation --- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically centers the items */
-    padding: 10px 20px;
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle gray shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--card-background);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
-/*
-    Logo styling:
-    Gives the logo a fixed width.
-*/
 .logo {
-    width: 100px;
+  width: 90px;
+  height: auto;
 }
 
-/*
-    Navigation items styling:
-    Uses flexbox to display the list items horizontally.
-    Removes default list bullet points and spacing.
-*/
 .nav-items > ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 30px; /* Adds space between the list items */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
 }
 
-/*
-    Individual navigation link styling:
-    Changes font size, adds padding, and a smooth transition for hover effects.
-    The cursor changes to a pointer to indicate it's clickable.
-*/
 .nav-items > ul > li {
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    color: #555; /* Dark gray for readability */
-    transition: color 0.3s ease; /* Smooth color change on hover */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-light);
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
-/*
-    Navigation link hover effect:
-    Changes the color of the text when you hover over it.
-*/
+/* Add an animated underline for the hover effect */
+.nav-items > ul > li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
 .nav-items > ul > li:hover {
-    color: #007bff; /* A nice, vibrant blue */
+  color: var(--primary-color);
 }
 
-/*
-    Search container styling:
-    Adds more padding and a bottom margin for better spacing.
-*/
-.search-container {
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
+.nav-items > ul > li:hover::after {
+  width: 100%;
 }
 
-/*
-    Restaurant cards container styling:
-    Uses flexbox to create a responsive grid of cards.
-    The cards will wrap to the next line if the screen is too small.
-*/
+/* --- Filter & Search Area --- */
+.filter-container {
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Generic Button Styling */
+.btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 103, 1, 0.3);
+}
+
+.btn:hover {
+  background-color: #e65c00; /* A slightly darker orange */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 103, 1, 0.4);
+}
+
+/* --- Restaurant Cards --- */
 .res-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap to the next line */
-    justify-content: center; /* Centers the cards horizontally */
-    gap: 25px; /* Adds space between the cards */
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 40px 40px;
 }
 
-/*
-    Restaurant card styling:
-    Removes the border and adds rounded corners and a shadow.
-    Includes a smooth transition for the hover effect.
-*/
 .res-card {
-    border: none;
-    border-radius: 12px; /* Smoothed, rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds depth */
-    transition: transform 0.3s ease; /* Smooth scale up on hover */
-    width: 250px;
-    overflow: hidden; /* Ensures content doesn't spill out */
-    background-color: #ffffff; /* White card background */
+  background-color: var(--card-background);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  width: 260px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent; /* Prepare for hover border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/*
-    Restaurant card hover effect:
-    Slightly enlarges the card when the mouse is over it.
-*/
 .res-card:hover {
-    transform: scale(1.03); /* Zooms in slightly */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary-color);
 }
 
-/*
-    Restaurant image styling:
-    Ensures the image fills the container while maintaining its aspect ratio.
-*/
 .res-img {
-    width: 100%;
-    height: 160px; /* Consistent image height */
-    object-fit: cover; /* Crops image to fit without stretching */
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
 }
 
-/*
-    Text inside the card:
-    Adds padding and sets margins for better text alignment and readability.
-*/
-.res-card h2,
-.res-card p {
-    padding: 0 15px;
-    margin: 10px 0;
+/* Styling for text content within the card */
+.card-info {
+  padding: 15px;
 }
 
+.card-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-info h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-info .rating {
+  font-size: 15px;
+  font-weight: 500;
+  color: #3d9970; /* A pleasant green for ratings */
+}
