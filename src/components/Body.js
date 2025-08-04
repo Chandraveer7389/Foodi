@@ -1,5 +1,5 @@
 import ResCard from "./ResCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Body = () => {
   let [listItems, setListItems] = useState([
@@ -22,12 +22,14 @@ const Body = () => {
       rating: 3.9,
     },
   ]);
+  useEffect(()=>{console.log("use effect"),[]})
+  console.log("hey")
   return (
     <div>
       <div className="btn-container">
         <button className="btn" onClick={() =>{
             const topRated = listItems.filter((items) => {
-                return items.rating > 4;
+                return items.rating > 4.0;
             })
             setListItems(topRated)
         }}>Top Rated restaurant</button>
