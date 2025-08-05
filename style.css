@@ -207,3 +207,24 @@ body {
   background-size: 1200px 100%; /* A very wide gradient */
   animation: shimmer 2s linear infinite;
 }
+
+/* --- Login/Logout Button in Header --- */
+.btn-login {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px; /* Slightly adjusted padding to fit navbar height */
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 103, 1, 0.3);
+}
+
+.btn-login:hover {
+  background-color: #e65c00; /* Darker orange from your .btn:hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 103, 1, 0.4);
+}

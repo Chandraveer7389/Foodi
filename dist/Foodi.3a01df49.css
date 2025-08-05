@@ -182,4 +182,24 @@ body {
   border-radius: 15px;
   animation: 2s linear infinite shimmer;
 }
+
+.btn-login {
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all .3s;
+  box-shadow: 0 2px 8px #ff67014d;
+}
+
+.btn-login:hover {
+  background-color: #e65c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #ff670166;
+}
 /*# sourceMappingURL=Foodi.3a01df49.css.map */
