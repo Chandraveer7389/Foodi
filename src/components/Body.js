@@ -1,5 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
+import Shimmers from "./Shimmers";
+
 
 const Body = () => {
   let [listItems, setListItems] = useState([]);
@@ -13,7 +15,9 @@ const Body = () => {
   useEffect(() => {
     fetchData()
   },[]);
-
+  if(listItems.length === 0){
+    return <Shimmers/>
+  }
   return (
     <div>
       <div className="btn-container">
@@ -21,7 +25,7 @@ const Body = () => {
           className="btn"
           onClick={() => {
             const topRated = listItems.filter((items) => {
-              return items.rating > 4.0;
+              return items.info.avgRating > 4.2;
             });
             setListItems(topRated);
           }}

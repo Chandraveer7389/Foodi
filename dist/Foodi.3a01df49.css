@@ -155,4 +155,31 @@ body {
   font-size: 15px;
   font-weight: 500;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 40px 40px;
+  display: flex;
+}
+
+.Shimmer-card {
+  width: 260px;
+  height: 280px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%) 0 0 / 1200px 100%;
+  border-radius: 15px;
+  animation: 2s linear infinite shimmer;
+}
 /*# sourceMappingURL=Foodi.3a01df49.css.map */

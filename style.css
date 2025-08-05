@@ -165,3 +165,45 @@ body {
   font-weight: 500;
   color: #3d9970; /* A pleasant green for ratings */
 }
+
+/* --- Shimmer Loading Placeholder --- */
+
+/* Keyframe animation for the moving shine effect */
+@keyframes shimmer {
+  0% {
+    /* The gradient starts off-screen to the left */
+    background-position: -1000px 0;
+  }
+  100% {
+    /* The gradient finishes off-screen to the right */
+    background-position: 1000px 0;
+  }
+}
+
+/*
+  Container for the shimmer cards.
+  This should mimic your .res-container for a seamless layout switch.
+*/
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Same gap as .res-container */
+  padding: 10px 40px 40px; /* Same padding as .res-container */
+}
+
+/*
+  The individual shimmer card.
+  It's styled to be a placeholder version of your .res-card.
+*/
+.Shimmer-card {
+  width: 260px; /* Same width as .res-card */
+  height: 280px; /* An approximate height for your .res-card */
+  border-radius: 15px; /* Same border-radius as .res-card */
+  box-shadow: 0 6px 20px var(--shadow-color); /* Use the same shadow */
+  
+  /* The animated gradient that creates the shimmer effect */
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 1200px 100%; /* A very wide gradient */
+  animation: shimmer 2s linear infinite;
+}
