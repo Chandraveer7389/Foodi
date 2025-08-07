@@ -1,7 +1,7 @@
 const foodlogo = new URL("../../assets/food-logo.jpg",import.meta.url);
 import { useState } from "react";
 const Header = () => {
-    const [btnState,setBtnState] = useState("Login")
+    const [btnState,setBtnState] = useState("Login");
     return (<div className="header">
         <div className="logo-container">
             <img
