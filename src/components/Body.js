@@ -16,7 +16,7 @@ const Body = () => {
     const restaurants = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
   setListItems(restaurants);
-  setFilterItems(listItems);
+  setFilterItems(restaurants);
   };
 
   useEffect(() => {
