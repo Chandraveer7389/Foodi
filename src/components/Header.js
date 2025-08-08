@@ -1,5 +1,6 @@
 const foodlogo = new URL("../../assets/food-logo.jpg",import.meta.url);
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
     const [btnState,setBtnState] = useState("Login");
     return (<div className="header">
@@ -10,10 +11,10 @@ const Header = () => {
         </div>
         <div className="nav-items">
         <ul>
-            <li>Home</li>
+            <li><Link to="/">Home</Link></li>
             <li>Cart</li>
-            <li>Contact Us</li>
-            <li>About</li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/about">About</Link></li>
             <button className="btn-login" onClick={()=>{ 
                 (btnState === "Login")? setBtnState("Logout"):setBtnState("Login");
             }}>{btnState}</button>
