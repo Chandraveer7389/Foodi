@@ -1,4 +1,11 @@
-node_modules/
-.parcel-cache/
-dist/
+# Dependencies
+/node_modules
 
+# Parcel cache
+/.parcel-cache
+
+# Production build folder
+/dist
+
+# Environment variables
+.env
