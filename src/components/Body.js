@@ -5,18 +5,19 @@ import Shimmers from "./Shimmers";
 const Body = () => {
   let [listItems, setListItems] = useState([]);
   let [filterItems, setFilterItems] = useState([]);
-  
-  const [searchText, setSearchText] = useState("");
-  
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api"
-    );
-    const json = await data.json();
-    const restaurants = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
 
-  setListItems(restaurants);
-  setFilterItems(restaurants);
+  const [searchText, setSearchText] = useState("");
+
+  const fetchData = async () => {
+    const response = await fetch(
+      `https://cors.eu.org/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+    );
+    const json = await response.json();
+    const restaurants =
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+    setListItems(restaurants);
+    setFilterItems(restaurants);
   };
 
   useEffect(() => {
@@ -39,7 +40,6 @@ const Body = () => {
         <button
           className="Search-Btn"
           onClick={() => {
-            
             let searchResult = listItems.filter((item) => {
               return item.info.name
                 .toLowerCase()
