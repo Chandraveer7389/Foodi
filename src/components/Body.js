@@ -1,6 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Shimmers from "./Shimmers";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   let [listItems, setListItems] = useState([]);
@@ -9,16 +10,19 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const fetchData = async () => {
-    const response = await fetch(
-      `https://cors.eu.org/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
-    );
-    const json = await response.json();
-    const restaurants =
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+  const response = await fetch(
+    `https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.7271012&lng=88.39528609999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`
+  );
+  
+ 
+  const json = await response.json();
 
-    setListItems(restaurants);
-    setFilterItems(restaurants);
-  };
+  const restaurants =
+    json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
+  setListItems(restaurants);
+  setFilterItems(restaurants);
+};
 
   useEffect(() => {
     fetchData();
@@ -64,7 +68,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterItems.map((restaurant) => (
-          <ResCard key={restaurant.info.id} resInfo={restaurant.info} />
+          <Link  key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><ResCard  resInfo={restaurant.info} /></Link>
         ))}
       </div>
     </div>
