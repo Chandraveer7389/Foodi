@@ -1,8 +1,10 @@
 const foodlogo = new URL("../../assets/food-logo.jpg",import.meta.url);
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
     const [btnState,setBtnState] = useState("Login");
+    const onlineStatus = useOnlineStatus();
     return (<div className="header">
         <div className="logo-container">
             <img
@@ -10,7 +12,7 @@ const Header = () => {
             />
         </div>
         <div className="nav-items">
-        <ul>
+        <ul> <li>{(onlineStatus)? "Online" : "Offline"}</li>
             <li><Link to="/">Home</Link></li>
             <li>Cart</li>
             <li><Link to="/contact">Contact Us</Link></li>
