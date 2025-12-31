@@ -1,0 +1,29 @@
+{
+  "name": "foodi",
+  "version": "1.0.0",
+  "description": "Food App",
+  "homepage": "https://github.com/Chandraveer7389/Foodi#readme",
+  "bugs": {
+    "url": "https://github.com/Chandraveer7389/Foodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chandraveer7389/Foodi.git"
+  },
+  "license": "ISC",
+  "author": "Chandraveer Singh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start":"parcel index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
