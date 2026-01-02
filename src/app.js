@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img src={require("./logo.png")} alt="food-logo"/>
+        <img src={require("../logo.png")} alt="food-logo"/>
       </div>
       <div className="nav-items">
         <ul>
